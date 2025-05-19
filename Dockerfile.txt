@@ -1,0 +1,15 @@
+# Use the official Obico server image as the base
+  FROM thespaghettidetective/obico-server:release
+
+  # Metadata
+  LABEL maintainer="tulathron-ultimate"
+  LABEL description="Obico server for Unraid, based on the official Obico image"
+
+  # No additional modifications needed for CPU-based setup
+  # The official image includes PostgreSQL and Redis internally
+
+  # Expose the default port
+  EXPOSE 3334
+
+  # Default command (inherited from base image)
+  CMD ["/app/docker-entrypoint.sh"]
